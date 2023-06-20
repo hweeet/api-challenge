@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Form from './Form';
-import Content from './Content';
+/*import Content from './Content';*/
+import Table from './Table';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
         const response = await fetch(`${API_URL}${reqType}`);
         if (response.ok) {
           const data = await response.json();
-          //console.log(data);
+          console.log(data);
           setItems(data);
         }
       } catch (err) {
@@ -27,17 +28,15 @@ function App() {
   
   }, [reqType]);
 
-console.log(items)
-
   return (
     <div className="App">
       <Form reqType={reqType}
         setReqType={setReqType}
       />
-      <Content items={items}
+      {/*<Content items={items}
         setItems={setItems}
-       
-      />
+      />*/}
+       <Table items={items}/>
     </div>
   );
 }

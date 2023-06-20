@@ -5,7 +5,8 @@ const Content = ({ items, setItems }) => {
     return (
         <ul>
             {items.map((item) => (
-                <List item={item}
+                <List key={item.id} 
+                      item={item}
                       
                 />
             )
